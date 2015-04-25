@@ -24,6 +24,7 @@ import java.util.function.Consumer;
 
 /**
  * @author <a href="mailto:larsdtimm@gmail.com">Lars Timm</a>
+ * @author <a href="mailto:julien@julienviet.com">Julien Viet</a>
  */
 public class ScalaLang implements Lang {
 
@@ -45,7 +46,7 @@ public class ScalaLang implements Lang {
       @Override
       public void run(Map<String, Object> globals) throws Exception {
         // TODO: handle globals.
-        
+        /*
         List<String> imports = Arrays.asList(
           "io/vertx/scala/core/buffer/Buffer.scala",
           "io/vertx/lang/scala/json/Json.scala",
@@ -59,7 +60,7 @@ public class ScalaLang implements Lang {
           InputStream stream = loader.getResourceAsStream(imp);
           String source = new Scanner(stream,"UTF-8").useDelimiter("\\A").next();
           engine.compileString(source);
-        }
+        }*/
         
         engine.eval(source);
       }

@@ -15,6 +15,8 @@
  */
 package io.vertx.lang.scala.json
 
+import io.vertx.core.json.JsonObject
+import io.vertx.core.json.JsonArray
 import scala.annotation.implicitNotFound
 
 @implicitNotFound(msg = "Cannot find add operations for type ${T}")

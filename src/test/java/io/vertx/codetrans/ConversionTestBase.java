@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public abstract class ConversionTestBase {
 
-  public static Lang[] langs() { return new Lang[] { new GroovyLang(), new JavaScriptLang(), new RubyLang() }; }
+  public static Lang[] langs() { return new Lang[] { new GroovyLang(), new JavaScriptLang(), new RubyLang()/*, new ScalaLang()*/ }; }
 
   public void runJavaScript(String path) {
     run(new JavaScriptLang(), path);
@@ -39,7 +39,15 @@ public abstract class ConversionTestBase {
     run(new RubyLang(), path, method);
   }
 
+  public void runScala(String path) {
+    run(new ScalaLang(), path);
+  }
 
+  public void runScala(String path, String method) {
+    run(new ScalaLang(), path, method);
+  }
+
+  
   public void runAll(String path, Runnable after) {
     for (Lang lang : langs()) {
       run(lang, path);
@@ -52,6 +60,16 @@ public abstract class ConversionTestBase {
       run(lang, path, method);
       after.run();
     }
+  }
+
+  // Temporary method
+  public void runAllScala(String path, String method, Runnable after) {
+    for (Lang lang : langs()) {
+      run(lang, path, method);
+      after.run();
+    }
+    runScala(path, method);
+//    after.run();
   }
 
   public void runAll(String path, String method, Map<String, Object> globals, Runnable after) {

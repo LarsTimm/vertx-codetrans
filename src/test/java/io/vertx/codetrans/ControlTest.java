@@ -17,7 +17,7 @@ public class ControlTest extends ConversionTestBase {
 
   @Test
   public void testIfElseEvalElse() throws Exception {
-    runAll("control/IfElse", "evalElse", () -> {
+    runAllScala("control/IfElse", "evalElse", () -> {
       Assert.assertEquals("inElse", o);
       o = null;
     });

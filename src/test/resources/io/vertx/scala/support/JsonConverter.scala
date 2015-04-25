@@ -6,10 +6,10 @@ import io.vertx.core.json.JsonObject
 object JsonConverter {
 
   def toJsonObject(obj: JsonObject): JsonObject =  {
-    return new JsonObject(obj);
+    return obj;
   }
 
   def toJsonArray(obj: JsonArray): JsonArray = {
-    return new JsonArray(obj);
+    return obj;
   }
 }

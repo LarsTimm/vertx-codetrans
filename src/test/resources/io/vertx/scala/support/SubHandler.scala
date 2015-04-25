@@ -5,7 +5,7 @@ import io.vertx.core.Handler
 
 class SubHandler extends Handler[String] {
 
-  def handle(String event): Unit = {
+  def handle(event: String): Unit = {
     MethodExpressionTest.event = event
   }
 

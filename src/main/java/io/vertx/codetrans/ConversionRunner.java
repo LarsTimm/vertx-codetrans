@@ -25,6 +25,9 @@ public class ConversionRunner {
       case "js":
         lang = new JavaScriptLang();
         break;
+      case "scala":
+        lang = new ScalaLang();
+        break;
       default:
         throw new UnsupportedOperationException();
     }

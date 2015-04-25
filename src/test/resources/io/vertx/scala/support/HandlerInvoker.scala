@@ -3,6 +3,7 @@ package io.vertx.scala.support
 import io.vertx.core.AsyncResult
 import io.vertx.core.Future
 import io.vertx.core.Handler
+import scala.util.Try
 
 object HandlerInvoker {
 
