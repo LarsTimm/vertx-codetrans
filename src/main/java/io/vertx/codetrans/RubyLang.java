@@ -331,7 +331,7 @@ public class RubyLang implements Lang {
   }
 
   @Override
-  public void renderJsonObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer) {
+  public void renderJsonObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer, String methodName) {
     expression.render(writer);
     writer.append("[");
     name.render(writer);
@@ -339,12 +339,12 @@ public class RubyLang implements Lang {
   }
 
   @Override
-  public void renderDataObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer) {
+  public void renderDataObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer, String methodName) {
     renderJsonObjectMemberSelect(expression, ExpressionModel.render(writer2 -> {
       writer2.append("'");
       name.render(writer2);
       writer2.append("'");
-    }), writer);
+    }), writer, methodName);
   }
 
   /**

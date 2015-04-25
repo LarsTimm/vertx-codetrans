@@ -191,7 +191,7 @@ public class JavaScriptLang implements Lang {
   }
 
   @Override
-  public void renderJsonObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer) {
+  public void renderJsonObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer, String methodName) {
     expression.render(writer);
     writer.append('.');
     name.render(writer);
@@ -205,8 +205,8 @@ public class JavaScriptLang implements Lang {
   }
 
   @Override
-  public void renderDataObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer) {
-    renderJsonObjectMemberSelect(expression, name, writer);
+  public void renderDataObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer, String methodName) {
+    renderJsonObjectMemberSelect(expression, name, writer, methodName);
   }
 
   @Override

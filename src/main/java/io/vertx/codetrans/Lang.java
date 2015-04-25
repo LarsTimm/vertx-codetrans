@@ -179,9 +179,9 @@ public interface Lang {
 
   void renderJsonObjectToString(ExpressionModel expression, CodeWriter writer);
 
-  void renderJsonObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer);
+  void renderJsonObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer, String methodName);
 
-  void renderDataObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer);
+  void renderDataObjectMemberSelect(ExpressionModel expression, ExpressionModel name, CodeWriter writer, String methodName);
 
   void renderLambda(LambdaExpressionTree.BodyKind bodyKind, List<TypeInfo> parameterTypes, List<String> parameterNames, CodeModel body, CodeWriter writer);
 

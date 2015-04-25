@@ -27,7 +27,7 @@ public class DataObjectModel extends ExpressionModel {
     if (DataObjectLiteralModel.isGet(methodName)) {
       return ExpressionModel.render( writer -> {
         writer.getLang().renderDataObjectMemberSelect(expression,
-            ExpressionModel.render(DataObjectLiteralModel.unwrapSet(methodName)), writer);
+            ExpressionModel.render(DataObjectLiteralModel.unwrapSet(methodName)), writer, methodName);
       });
     }
     throw new UnsupportedOperationException("Unsupported method " + methodName + " on object model");

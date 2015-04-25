@@ -38,7 +38,7 @@ public class JsonObjectModel extends ExpressionModel {
       case "getValue":
         if (argumentModels.size() == 1) {
           return ExpressionModel.render( writer -> {
-            writer.getLang().renderJsonObjectMemberSelect(expression, argumentModels.get(0), writer);
+            writer.getLang().renderJsonObjectMemberSelect(expression, argumentModels.get(0), writer, methodName);
           });
         } else {
           throw unsupported("Invalid arguments " + argumentModels);
